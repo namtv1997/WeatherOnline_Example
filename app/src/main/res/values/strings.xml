@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WeatherOnline</string>
+    <string name="label_wind">Wind</string>
+    <string name="label_rain">Rain</string>
+    <string name="label_humidity">Humidity</string>
+    <string name="label_km">km/h</string>
+    <string name="label_percent">%</string>
+    <string name="error_message_lost_internet_connection">Unable to connect. Please check that you are connected to the
+        Internet and try again.
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

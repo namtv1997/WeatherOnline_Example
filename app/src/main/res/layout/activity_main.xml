@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.weather.MainActivity">
+
+    <include layout="@layout/include_toolbar" />
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_tiny"
+        android:background="@drawable/bg_snow"
+        android:paddingStart="@dimen/spacing_normal"
+        app:dotsColor="@color/gray_30"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="@dimen/spacing_tiny"
+        app:dotsSpacing="@dimen/spacing_tiny"
+        app:dotsWidthFactor="1"
+        app:progressMode="false"
+        app:selectedDotColor="@color/white" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_snow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvCity"
+            style="@style/TextTitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_large"
+            android:text="London"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            style="@style/TextTitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_tiny"
+            android:text="6:30 pm - Monday,24 Dec'18"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toStartOf="@+id/tvCity"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity" />
+
+
+        <TextView
+            android:id="@+id/tvTemperature"
+            style="@style/TextContentLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingTop="80dp"
+            android:text="-5oc"
+            android:textColor="#ffffff"
+            android:textSize="90dp"
+            app:layout_constraintStart_toStartOf="@+id/tvTime"
+            app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+        <ImageView
+            android:id="@+id/imgWeather"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginEnd="72dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTemperature" />
+
+        <TextView
+            android:id="@+id/tvsttWeather"
+            style="@style/TextTitleLarge"
+            android:padding="@dimen/spacing_tiny"
+            android:text="Cloudy"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@+id/imgWeather"
+            app:layout_constraintLeft_toRightOf="@id/imgWeather"
+            app:layout_constraintTop_toTopOf="@+id/imgWeather" />
+
+        <View
+            android:id="@+id/Devider1"
+            style="@style/ViewLineGray"
+            android:layout_width="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWeather" />
+
+        <TextView
+            android:id="@+id/tvWind"
+            style="@style/TextTitleLarge"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_huge"
+            android:paddingEnd="@dimen/spacing_small"
+            android:text='@string/label_wind'
+            android:textColor="@color/gray_30"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Devider1" />
+
+        <TextView
+            android:id="@+id/tv13Wind"
+            style="@style/TextTitleLarge"
+            android:paddingStart="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_small"
+            android:text="13"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/tvKM"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWind" />
+
+        <TextView
+            android:id="@+id/tvKM"
+            style="@style/TextTitleLarge"
+            android:paddingStart="@dimen/spacing_normal"
+            android:text="@string/label_km"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv13Wind" />
+
+        <ProgressBar
+            android:id="@+id/pbWind"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="70dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_small"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv13Wind"
+            app:layout_constraintTop_toBottomOf="@+id/tvKM" />
+
+        <TextView
+            android:id="@+id/tvRain"
+            style="@style/TextTitleLarge"
+            android:paddingTop="@dimen/spacing_huge"
+            android:text="@string/label_rain"
+            android:textColor="@color/gray_30"
+            app:layout_constraintLeft_toRightOf="@id/tvWind"
+            app:layout_constraintRight_toLeftOf="@id/tvHumidity"
+            app:layout_constraintTop_toBottomOf="@id/Devider1" />
+
+        <TextView
+            android:id="@+id/tv0Rain"
+            style="@style/TextTitleLarge"
+            android:paddingTop="@dimen/spacing_small"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            app:layout_constraintLeft_toRightOf="@id/tv13Wind"
+            app:layout_constraintRight_toLeftOf="@id/tvHumidity"
+            app:layout_constraintTop_toBottomOf="@id/tvRain" />
+
+        <TextView
+            android:id="@+id/tvPercentRain"
+            style="@style/TextTitleLarge"
+            android:text="@string/label_percent"
+            android:textColor="#ffffff"
+            app:layout_constraintLeft_toRightOf="@id/tvKM"
+            app:layout_constraintRight_toLeftOf="@id/tvPercentHumidity"
+            app:layout_constraintTop_toBottomOf="@id/tv0Rain" />
+
+        <ProgressBar
+            android:id="@+id/pbRain"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="70dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/pbWind"
+            app:layout_constraintStart_toStartOf="@+id/tv0Rain"
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentRain" />
+
+        <TextView
+            android:id="@+id/tvHumidity"
+            style="@style/TextTitleLarge"
+            android:paddingTop="@dimen/spacing_huge"
+            android:paddingEnd="@dimen/spacing_large"
+            android:text="@string/label_humidity"
+            android:textColor="@color/gray_30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tvRain"
+            app:layout_constraintTop_toBottomOf="@id/Devider1" />
+
+        <TextView
+            android:id="@+id/tv88Humidity"
+            style="@style/TextTitleLarge"
+            android:paddingTop="@dimen/spacing_small"
+            android:paddingEnd="75dp"
+            android:text="88"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tv0Rain"
+            app:layout_constraintTop_toBottomOf="@id/tvHumidity" />
+
+        <TextView
+            android:id="@+id/tvPercentHumidity"
+            style="@style/TextTitleLarge"
+            android:layout_marginStart="85dp"
+            android:paddingEnd="100dp"
+            android:text="@string/label_percent"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/tvPercentRain"
+            app:layout_constraintTop_toBottomOf="@id/tv88Humidity" />
+
+        <ProgressBar
+            android:id="@+id/pbHumidity"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="70dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintLeft_toRightOf="@id/pbRain"
+            app:layout_constraintStart_toStartOf="@+id/tvPercentHumidity"
+            app:layout_constraintTop_toBottomOf="@+id/tvPercentHumidity" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>
+
+
+
+
