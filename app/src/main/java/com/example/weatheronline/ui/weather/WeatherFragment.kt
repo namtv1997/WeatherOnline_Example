@@ -1,22 +1,17 @@
 package com.example.weatheronline.ui.weather
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.weatheronline.common.Common
+import com.example.weatheronline.model.ListWeatherInfor
 import com.example.weatheronline.model.WeatherResult
-import com.example.weatheronline.viewmodel.WeatherViewmodel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_weather.*
 import java.text.SimpleDateFormat
 
 class WeatherFragment : Fragment() {
-    private lateinit var weatherViewModel: WeatherViewmodel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(com.example.weatheronline.R.layout.fragment_weather, container, false)
@@ -25,48 +20,14 @@ class WeatherFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        val weatherResult = arguments?.getSerializable("dataOneDay") as ListWeatherInfor
+        val cityResult = arguments?.getSerializable("dataNameOfCity") as WeatherResult
+
+        tvCity.text =cityResult.city.name
+
+        showDataWeather(weatherResult)
         pbHumidity.max = 100
         pbWind.max = 13
-
-        weatherViewModel = activity?.run {
-            ViewModelProviders.of(this).get(WeatherViewmodel::class.java).apply {
-                weather.observe(this@WeatherFragment, Observer { result ->
-                    result?.let {
-                        showDataWeather(it)
-
-                    }
-                })
-            }
-        } ?: throw Exception("Invalid Activity")
-
-
-        weatherViewModel.getDataWeather(34.9667, 138.9333, Common.API_Key)
-
-
-    }
-
-    @SuppressLint("SetTextI18n", "SimpleDateFormat")
-    fun showDataWeather(weather: WeatherResult) {
-        val listWeather = weather.list!![0].let { it ->
-            val kelvin = it.main?.temp
-            val celsius = kelvin?.minus(273.15)
-            val result = Math.round(celsius!!).toString()
-
-            val sdf = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
-            val dateInString = sdf.parse(it.dtTxt)
-            sdf.applyPattern("hh:mm a - dd MMM yy")
-
-            tvCity.text = weather.city.name
-            tvTemperature.text = "$result\u00B0"
-            tvTime.text = sdf.format(dateInString)
-            tvsttWeather.text = it.weather!![0].main
-            tv13Wind.text = it.wind?.speed.toString()
-            pbWind.progress = it.wind?.speed!!.toInt()
-            tv88Humidity.text = it.main.humidity.toString()
-            pbHumidity.progress = it.main.humidity!!.toInt()
-        }
-
-
 
         when {
             tvsttWeather.text == "Clouds" -> {
@@ -83,6 +44,26 @@ class WeatherFragment : Fragment() {
             }
         }
 
+
+    }
+
+    @SuppressLint("SetTextI18n", "SimpleDateFormat")
+    fun showDataWeather(weather: ListWeatherInfor) {
+
+        val kelvin = weather.main?.temp
+        val celsius = kelvin?.minus(273.15)
+        val result = Math.round(celsius!!).toString()
+        val sdf = SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
+        val dateInString = sdf.parse(weather.dtTxt)
+        sdf.applyPattern("hh:mm a - dd MMM yy")
+
+        tvTemperature.text = "$result\u00B0"
+        tvTime.text = sdf.format(dateInString)
+        tvsttWeather.text = weather.weather!![0].main
+        tv13Wind.text = weather.wind?.speed.toString()
+        pbWind.progress = weather.wind?.speed!!.toInt()
+        tv88Humidity.text = weather.main.humidity.toString()
+        pbHumidity.progress = weather.main.humidity!!.toInt()
 
     }
 }

@@ -33,6 +33,8 @@
     <color name="yellow_bright">#F8BF63</color>
     <color name="yellow_light">#F5CE55</color>
 
+    <color name="orange">#FF5722</color>
+
     <!--color text 'sign out' on personal-->
     <color name="pink_bright">#FF1B37</color>
     <color name="pink_light">#FC8998</color>

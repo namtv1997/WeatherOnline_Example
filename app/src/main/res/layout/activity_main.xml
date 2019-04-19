@@ -15,7 +15,7 @@
         android:layout_height="@dimen/spacing_tiny"
         android:background="@drawable/bg_snow"
         android:paddingStart="@dimen/spacing_normal"
-        app:dotsColor="@color/gray_30"
+        app:dotsColor="@color/gray_60"
         app:dotsCornerRadius="8dp"
         app:dotsSize="@dimen/spacing_tiny"
         app:dotsSpacing="@dimen/spacing_tiny"

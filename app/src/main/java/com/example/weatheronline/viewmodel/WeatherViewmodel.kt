@@ -2,7 +2,6 @@ package com.example.weatheronline.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import android.util.Log
 import com.example.mockproject.retrofit2.DataClient
 import com.example.mockproject.retrofit2.RetrofitClient
 import com.example.weatheronline.R
@@ -25,6 +24,7 @@ class WeatherViewmodel : ViewModel() {
                 .subscribe({
                     weather.postValue(it)
                 }, {
+
                    errorMsg.postValue(R.string.error_message_lost_internet_connection)
                 })
         )

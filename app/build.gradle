@@ -51,4 +51,7 @@ dependencies {
 
     /*Viewpager Indicator*/
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:3.0.3'
+//    implementation 'androidx.work:work-runtime-ktx:2.0.1'
+    def work_version = "1.0.0-beta02"
+    implementation "android.arch.work:work-runtime-ktx:$work_version"
 }
