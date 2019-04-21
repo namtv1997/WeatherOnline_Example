@@ -9,7 +9,7 @@ import com.example.weatheronline.model.ListWeatherInfor
 import com.example.weatheronline.model.WeatherResult
 import com.example.weatheronline.ui.weather.WeatherFragment
 
-class WeatherPagerAdapter(manage: FragmentManager, val listWeather : ArrayList<ListWeatherInfor>, var nameOfCity:WeatherResult) : FragmentPagerAdapter(manage)  {
+class WeatherPagerAdapter(manage: FragmentManager, val listWeather : ArrayList<ArrayList<ListWeatherInfor>>, var nameOfCity:WeatherResult) : FragmentPagerAdapter(manage)  {
 
     override fun getItem(position: Int): Fragment {
 

@@ -3,6 +3,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -132,7 +133,7 @@
         android:id="@+id/tvRainAmount"
         style="@style/TextTitleLarge"
         android:paddingTop="@dimen/spacing_small"
-        android:text="70"
+        android:text="0"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="@id/tvLabelRain"
         app:layout_constraintTop_toBottomOf="@id/tvLabelRain" />
@@ -147,8 +148,7 @@
     <ProgressBar
         android:id="@+id/pbRain"
         style="@style/ProgressbarCustom"
-        android:max="100"
-        android:progress="20"
+        android:layout_height="6dp"
         android:progressDrawable="@drawable/custom_progressbar_orange"
         app:layout_constraintStart_toStartOf="@id/tvLabelRain"
         app:layout_constraintTop_toBottomOf="@id/tvRainPecent" />
