@@ -25,6 +25,7 @@
     <dimen name="icon_size_small">20dp</dimen>
     <dimen name="icon_size_button">48dp</dimen>
 
+    <dimen name="spacing_giant1">65dp</dimen>
     <dimen name="spacing_giant">56dp</dimen>
     <dimen name="spacing_huge">48dp</dimen>
     <dimen name="spacing_large">32dp</dimen>
@@ -33,6 +34,7 @@
     <dimen name="spacing_tiny">8dp</dimen>
     <dimen name="spacing_micro">4dp</dimen>
 
+    <dimen name="font_giant">32sp</dimen>
     <dimen name="font_huge">24sp</dimen>
     <dimen name="font_large">20sp</dimen>
     <dimen name="font_normal">16sp</dimen>
